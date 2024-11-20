@@ -1,5 +1,17 @@
 # Changelog
 
+## [15.1.0](https://github.com/AstroNvim/astrocommunity/compare/v15.0.0...v15.1.0) (2024-11-20)
+
+
+### Features
+
+* **pack:** Add purescript pack ([#1222](https://github.com/AstroNvim/astrocommunity/issues/1222)) ([aaaa844](https://github.com/AstroNvim/astrocommunity/commit/aaaa844e45420cd7b5f11b7c399bee919513d1d5))
+
+
+### Bug Fixes
+
+* **cmp-latex-symbols:** use correct repository ([9170837](https://github.com/AstroNvim/astrocommunity/commit/917083747a24022bac4b6feeff29ea1c5febc72f)), closes [#1236](https://github.com/AstroNvim/astrocommunity/issues/1236)
+
 ## [15.0.0](https://github.com/AstroNvim/astrocommunity/compare/v14.1.0...v15.0.0) (2024-11-11)
 
 
