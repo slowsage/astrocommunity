@@ -30,6 +30,20 @@ return {
       {
         "AstroNvim/astrocore",
         opts = {
+          autocmds = {
+            venv_selector_lsp_catch = {
+              {
+                event = "LspAttach",
+                callback = function(args)
+                  local client = vim.lsp.get_client_by_id(args.data.client_id)
+                  if not client or client.config._venv_selector then return end
+                  if not vim.tbl_contains(client.config.filetypes or {}, "python") then return end
+                  local ok, vs = pcall(require, "venv-selector")
+                  if ok and vs.python() then vs.restart_lsp_servers() end
+                end,
+              },
+            },
+          },
           mappings = {
             n = {
               ["<Leader>lv"] = { "<Cmd>VenvSelect<CR>", desc = "Select VirtualEnv" },
@@ -39,6 +53,7 @@ return {
       },
     },
     opts = {},
+    ft = "python",
     cmd = "VenvSelect",
   },
   {
